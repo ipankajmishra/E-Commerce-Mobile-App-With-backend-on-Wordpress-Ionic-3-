@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-navbar color="flow">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons right>
+        <button color="light" ion-button large icon (click)="openCart()">
+          <ion-icon name="cart"></ion-icon>
+          <ion-badge color="danger">{{ this.badge }}</ion-badge>
+        </button>
+      </ion-buttons>
+    <ion-title><div  class="title">happyEC.in</div></ion-title>
+  </ion-navbar>
+  <div no-margin>
+  <ion-toolbar color="flow">
+    <ion-searchbar [(ngModel)]="searchQuery" (search)="onSearch($event)"></ion-searchbar>
+  </ion-toolbar></div>
+</ion-header>
+
+<ion-content no-padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+  <ion-card >
+   <ion-slides loop="true" autoplay="3000" pager>
+      <ion-slide  *ngFor="let number of [1,2]">
+        <div (click)="viewall()"><img src="./assets/imgs/{{number}}.png"  /></div>
+      </ion-slide>
+      
+    </ion-slides>
+  </ion-card> 
+  
+  <div class="home_row1"><img class="home_row1" style="margin-top: 00px;" src="./assets/imgs/3.png" />
+   
+    <h5 style="margin-left: 10px" class="inter" >  International Brands</h5>
+    <ion-row class="home_row1" style="margin-top: 10px;">
+      <ion-col col-6>
+        <div (click)="mdd10a()"><img style="margin-top: 10px;" ng-click="mdd10a()" src="https://www.hapington.com/app/imgs/cytron_mdd10a.png" /></div>
+      </ion-col>
+      <ion-col col-6>
+        <div (click)="md10c()"><img style="margin-top: 10px;" src="https://www.hapington.com/app/imgs/cytron_ps2.jpeg" /></div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div><img style="margin-top: 00px;" src="https://www.hapington.com/app/imgs/not_listed.png" /></div>
+
+  <div class="Trending">
+    <ion-grid>
+        <ion-row>
+            <ion-col col-8>
+                <h5 style="margin-left: 10px" class="inter" >  Trending Products</h5>
+            </ion-col>
+            <ion-col col-4>
+                <button class="view_all" ion-button (click)="viewall()">
+                    View all
+                  </button>
+            </ion-col>
+        </ion-row>
+      <ion-row>
+        <ion-col>
+        <ion-list #productsSlides >
+            <ion-slides>
+              <ion-list *ngFor="let product of moreProducts" (click)="openProductPage(product)">
+                  <ion-slide class="home_row1">
+                  <ion-card><ion-item>
+                      <button ion-button icon clear item-left>
+                          <ion-icon name="arrow-round-back"></ion-icon>
+                        </button>
+                        <ion-thumbnail item-left>
+                      <img [src]="product.featured_src" />
+                    </ion-thumbnail>
+              
+                    <h5><b>{{ product.title }}</b></h5>
+              
+                    <p>
+                      <span [innerHTML]="product.short_description.substr(0, 50) + '...'"></span></p>
+                      <h4><b><span class="price_color" [innerHTML]="product.price_html"></span></b></h4>
+                      
+                    
+              
+                    <button ion-button icon clear item-right>
+                      <ion-icon name="arrow-round-forward"></ion-icon>
+                    </button></ion-item></ion-card></ion-slide>
+          
+          </ion-list>
+        </ion-slides>
+        </ion-list>
+        
+
+      </ion-col>
+    </ion-row>
+    </ion-grid></div>
+    <div (click)="unoR3()" class="arduino_uno_offer"><img style="margin-top: 00px;" src="./assets/imgs/arduino_uno_offer.png" /></div>
+    
+  
+
+
+    
+    
+    
+
+  <!--<ion-infinite-scroll (ionInfinite)="loadMoreProducts($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>-->
+
+</ion-content>
+

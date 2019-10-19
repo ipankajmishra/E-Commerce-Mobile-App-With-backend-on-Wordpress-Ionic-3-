@@ -1,0 +1,40 @@
+button {
+	ion-badge {
+		position: absolute;
+		top: -0.7rem;
+		right: -0.5rem;
+    opacity: 1.2;
+    background-color: transparent;
+
+		& ~ ion-icon {
+			margin-right: 1.2rem;
+		}
+	}
+}
+page-product-details {
+
+}
+
+.price_product{
+	color: green;
+	font-size: 17px;
+}
+
+.product_title{
+	color: blueviolet;
+	font-size: 17px;
+	font-weight: bold;
+	padding-bottom: 7px;
+}
+
+.chip_text{
+	font-size: 12px;
+	color: red;
+}
+
+.danger{
+	background: #ad5389;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
+}

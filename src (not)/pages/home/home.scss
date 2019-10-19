@@ -1,0 +1,73 @@
+button {
+	ion-badge {
+		position: absolute;
+		top: -0.7rem;
+		right: -0.5rem;
+    opacity: 1.2;
+    background-color: transparent;
+
+		& ~ ion-icon {
+			margin-right: 1.2rem;
+		}
+	}
+}
+
+      ion-card {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+
+ion-card {
+	width: 500px !important;
+	display: inline-block;
+}
+
+ion-scroll {
+	min-height: 160px; 
+	height: auto;
+
+		.scroll-content {
+		padding: 0px !important;
+	}    
+}
+
+.home_row1{
+	background: #ad5389;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+.slideh{
+	height: 40%;
+	width: 100%;
+}
+
+.inter{
+	color: white;
+	font-weight: 200;
+}
+
+.Trending{
+	height: 100px;
+	background: #ad5389;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.view_all{
+	background: #8360c3;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+				
+	align-content: center;
+	align-self: auto;
+}
+
+.arduino_uno_offer{
+	padding-top: 100px;
+	padding-right: 10px;
+}

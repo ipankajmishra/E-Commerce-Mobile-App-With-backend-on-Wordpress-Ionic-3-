@@ -1,0 +1,55 @@
+<!--
+  Generated template for the MyaccountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+  <ion-navbar color="danger">
+    <ion-title>My Account</ion-title>
+  </ion-navbar>
+
+
+
+<ion-content>
+  <ion-card>
+  </ion-card >
+  <ion-list no-padding>
+     <ion-refresher (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+    
+      <ion-item *ngFor="let product of fetching(pass)" text-wrap >
+          <ion-item-divider class="divider">
+            <ion-col col-4>
+                <button class="view_all" ion-button >
+                    #{{product.order_number}}
+                  </button>
+              
+            </ion-col>
+            </ion-item-divider>
+          <ion-card *ngFor="let items of line_items" text-wrap>
+            <ion-item>
+              <ion-thumbnail item-left>
+                <img src="https://www.hapington.com/app/imgs/icon.png" />
+              </ion-thumbnail>
+        
+              <h5><b>{{ items.name }}</b></h5>
+              <p>{{ items.total }}</p>
+  
+        <p>
+          <!--<span [innerHTML]="product.short_description.substr(0, 50) + '...'"></span></p>
+          <h4><b><span class="price_color" [innerHTML]="product.price_html"></span></b></h4>-->
+        
+  
+        <!--<button ion-button icon clear item-right>
+          <ion-icon name="play"></ion-icon>
+        </button>--></ion-item></ion-card>
+      </ion-item>
+      
+  
+  </ion-list>
+
+      
+  </ion-content>

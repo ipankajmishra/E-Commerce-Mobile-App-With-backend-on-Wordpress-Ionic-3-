@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar  color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar color="danger">
+    <ion-searchbar [(ngModel)]="searchQuery" (search)="onSearch($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-card>
+    <ion-slides loop="true" autoplay="3000" pager>
+      <ion-slide *ngFor="let number of [1,2,3,4]">
+        <img src="./assets/images/{{number}}.jpg" />
+      </ion-slide>
+      
+    </ion-slides>
+  </ion-card>
+
+  <img style="margin-top: 10px;" src="./assets/images/banner2.jpg" />
+
+  <ion-grid>
+    <ion-row>
+      <ion-slides #productSlides>
+        <ion-slide *ngFor="let product of products">
+          <ion-card no-padding>
+            <img [src]="product.featured_src" />
+            <h1 padding center> {{ product.title }} </h1>
+            <p center padding [innerHTML]="product.short_description"></p>
+
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-item *ngFor="let product of moreProducts" text-wrap (click)="openProductPage(product)">
+      <ion-thumbnail item-left>
+        <img [src]="product.featured_src" />
+      </ion-thumbnail>
+
+      <h2> {{ product.title }} </h2>
+
+      <p>
+        <span [innerHTML]="product.short_description.substr(0, 50) + '...'"></span>
+        <span [innerHTML]="product.price_html"></span>
+      </p>
+
+      <button ion-button icon clear item-right>
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="loadMoreProducts($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

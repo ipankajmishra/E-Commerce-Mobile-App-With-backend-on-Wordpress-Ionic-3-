@@ -1,0 +1,21 @@
+button {
+	ion-badge {
+		position: absolute;
+		top: -0.7rem;
+		right: -0.5rem;
+    opacity: 1.2;
+    background-color: transparent;
+
+		& ~ ion-icon {
+			margin-right: 1.2rem;
+		}
+	}
+}
+page-products-by-category {
+
+}
+
+.cardcategory{
+	background-color:whitesmoke;
+
+}

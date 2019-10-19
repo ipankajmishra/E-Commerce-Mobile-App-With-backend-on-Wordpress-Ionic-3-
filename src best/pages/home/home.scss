@@ -1,0 +1,19 @@
+button {
+	ion-badge {
+		position: absolute;
+		top: -0.7rem;
+		right: -0.5rem;
+    opacity: 1.2;
+    background-color: transparent;
+
+		& ~ ion-icon {
+			margin-right: 1.2rem;
+		}
+	}
+}
+
+      ion-card {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+

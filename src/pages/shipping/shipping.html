@@ -1,0 +1,58 @@
+<ion-header color="danger">
+
+  <ion-navbar color="flow">
+    <ion-title>Shipping Method</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    
+        <img  class="ship" src="./assets/imgs/shipping.jpg"/>
+        <br><br>
+ 
+  <p>Choose from available shipping methods</p>
+  <ion-list  radio-group [(ngModel)]="method">
+    
+        <ion-card>
+            <ion-item>
+            <ion-label>Flat Rate (Rs.45)</ion-label>
+            <ion-radio value="flat_rate" [checked]="flat_rate" (click)="flat_rate()"></ion-radio>
+          </ion-item>
+        </ion-card>
+       
+        <ion-card>  
+          <ion-item *ngIf="!free">
+            <ion-label>Free Shipping</ion-label>
+            <ion-radio value="free_shipping" [checked]="free_shipping" (click)="free_shipping()"></ion-radio>
+          </ion-item></ion-card>  
+          <ion-card><ion-item>
+            <ion-label>Guaranteed 1-2 days (Rs.89)</ion-label>
+            <ion-radio value="guaranteed" [checked]="guaranteed" (click)="guaranteed()"></ion-radio>
+          </ion-item></ion-card>  
+  </ion-list>
+
+  <div>
+    <br><br><br>
+  </div>
+
+  
+
+
+
+</ion-content>
+
+<ion-footer>
+    <ion-row>
+        <ion-col col-6>
+            <button ion-button color="danger" outline block>Continue shopping</button>
+        </ion-col>
+      <ion-col col-6>
+          <button *ngIf="selected" ion-button block color="danger" (click)="paymentpage()">Next</button>
+      </ion-col>
+  
+    </ion-row>
+    
+  </ion-footer>

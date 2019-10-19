@@ -1,0 +1,112 @@
+<!--<ion-header>
+  <ion-navbar color="flow">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons right>
+        <button color="light" ion-button large icon (click)="openCart()">
+          <ion-icon name="cart"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+  <div no-margin>
+  <ion-toolbar color="flow">
+    <ion-searchbar [(ngModel)]="searchQuery" (search)="onSearch($event)"></ion-searchbar>
+  </ion-toolbar></div>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-card>
+    <ion-slides loop="true" autoplay="3000" pager>
+      <ion-slide *ngFor="let number of [1,2]">
+        <img src="./assets/img/{{number}}.png" />
+      </ion-slide>
+      
+    </ion-slides>
+  </ion-card> 
+  
+  <img style="margin-top: 10px;" src="./assets/img/3.png" />
+
+    <!--<ion-grid>
+      <ion-row>
+        <ion-slides #productsSlides>
+          <ion-slide *ngFor="let product of products" (click)="openProductPage(product)">
+            <ion-card no-padding>
+              <img [src]="product.featured_src" />
+              <h1> {{ product.title }} </h1>
+              <p center padding [innerHTML]="product.short_description"></p>
+            </ion-card>
+
+          </ion-slide>
+        </ion-slides>
+      </ion-row>
+    </ion-grid>-->
+
+  
+  <!--<ion-list>
+    <ion-item *ngFor="let product of moreProducts" text-wrap (click)="openProductPage(product)">
+      <ion-thumbnail item-left>
+        <img [src]="product.featured_src" />
+
+      </ion-thumbnail>
+      <h2> {{ product.title }} </h2>
+
+      <p>
+        <span [innerHTML]="product.short_description.substr(0, 50) + '...'"></span>
+        <span [innerHTML]="product.price_html"></span>
+      </p>
+      <button ion-button icon clear item-right>
+        <ion-icon name="play"></ion-icon>
+        </button>
+
+    </ion-item>
+  </ion-list>-->
+
+  <!--<ion-infinite-scroll (ionInfinite)="loadMoreProducts($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>-->
+
+<!--</ion-content>-->
+
+
+
+
+
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong>Ionic 3</strong> Start Theme
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+      <button ion-button tappable (click)="goToAccount()">
+        <ion-icon name="cog"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn common-bg">
+
+  <ion-card no-margin margin-bottom class="full-width">
+    <ion-item tappable (click)="choosePlace('from')" class="border-bottom">
+      <ion-icon name="search" color="primary" item-left></ion-icon>
+      <span>{{ search.name }}</span>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="md-calendar" color="primary" item-left></ion-icon>
+      <ion-datetime class="no-pl" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="search.date"></ion-datetime>
+    </ion-item>
+  </ion-card>
+
+  <button ion-button icon-start block no-margin color="primary" class="round" tappable (click)="doSearch()">
+    <ion-icon name="search"></ion-icon> Search
+  </button>
+
+</ion-content>
