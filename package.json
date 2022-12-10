@@ -33,7 +33,7 @@
     "com.paypal.cordova.mobilesdk": "3.5.0",
     "com.razorpay.cordova": "1.4.0",
     "cordova-android": "7.1.1",
-    "cordova-browser": "5.0.4",
+    "cordova-browser": "6.0.0",
     "cordova-plugin-badge": "0.8.8",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.1.3",
